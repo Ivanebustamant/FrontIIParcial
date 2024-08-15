@@ -12,9 +12,6 @@ export default function App() {
   const onChangeUserName = (e) => setUserName(e.target.value);
   const onChangePassword = (e) => setPassword(e.target.value);
 
-  const validCharactersRegex = /^[\w-.]+$/;
-
-
   const onSubmitForm = (e) => {
     e.preventDefault();
     // Validaciones
@@ -24,8 +21,6 @@ export default function App() {
       setError("El número de caracteres para el nombre de usuario debe ser mayor a 3");
     } else if (password.length < 6) {
       setError("El número de caracteres para la contraseña debe ser mayor a 6");
-    } else if (!validCharactersRegex.test(userName) || !validCharactersRegex.test(password)) {
-      setError("Los campos no deben contener caracteres especiales");
     } else {
       setError("");
       setSubmitted(true);
@@ -34,7 +29,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h3>Bienvenido a Empresa</h3>
+      <h3>Bienvenido a Test</h3>
       <h3>Iniciar Sesión</h3>
       <form onSubmit={onSubmitForm}>
         <label>Nombre de usuario: </label>
